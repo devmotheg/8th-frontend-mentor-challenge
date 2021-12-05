@@ -1,0 +1,231 @@
+/*!
+  @author Mohamed Muntasir
+  @link https://github.com/devmotheg
+  */
+
+/* General */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: url("../images/bg-mobile.svg") top left no-repeat
+    hsl(257, 40%, 49%);
+  background-size: clamp(330px, 100%, 100%);
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  min-width: 330px;
+}
+
+:root {
+  font-size: clamp(14px, 3.8vw, 16px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+h1,
+p {
+  line-height: 1.5em;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+/** Medium devices (tablets, 768px and up) **/
+@media (min-width: 768px) {
+  body {
+    background-image: url("../images/bg-desktop.svg");
+    background-size: cover;
+    background-position-x: center;
+  }
+
+  :root {
+    font-size: clamp(0px, 1.3vw, 16px);
+  }
+}
+
+/* Container */
+
+main {
+  max-width: 1095px;
+  width: 90%;
+  min-width: 330px;
+  display: grid;
+  gap: calc(55em / 16);
+  margin-bottom: calc(50em / 16);
+  margin-top: calc(50em / 16);
+}
+
+/** Medium devices (tablets, 768px and up) **/
+@media (min-width: 768px) {
+  main {
+    grid-template-areas: "logo logo" ". ." "media media";
+    grid-template-columns: 58% 1fr;
+    column-gap: calc(55em / 16);
+    row-gap: 0;
+  }
+}
+
+/* Logo */
+
+div:first-child {
+  width: 41%;
+}
+
+div:first-child img {
+  width: 100%;
+}
+
+/** Medium devices (tablets, 768px and up) **/
+@media (min-width: 768px) {
+  div:first-child {
+    grid-area: logo;
+    width: 18.5%;
+    margin-bottom: calc(55em / 16);
+  }
+}
+
+/* Mockups */
+
+div:nth-child(2),
+div:nth-child(2) img {
+  width: 100%;
+}
+
+/* Intro */
+
+h1 {
+  text-align: center;
+  margin: auto;
+  font-size: calc(29.5em / 16);
+}
+
+p {
+  text-align: center;
+  font-size: calc(20em / 16);
+  margin: calc(15em / 16) auto calc(23em / 16);
+}
+
+button {
+  font-size: inherit;
+  color: hsl(257, 40%, 49%);
+  background: white;
+  border-radius: calc(25em / 16);
+  padding: calc(12em / 16) calc(84em / 16);
+  display: block;
+  box-shadow: 0 calc(6em / 16) calc(8em / 16) calc(-4em / 16) rgba(0, 0, 0, 0.4);
+  margin: auto;
+  transition: 0.3s;
+  transition-property: background-color, color;
+}
+
+button:hover {
+  background: hsl(300, 69%, 71%);
+  color: white;
+}
+
+/** Medium devices (tablets, 768px and up) **/
+@media (min-width: 768px) {
+  div:nth-child(3) {
+    align-self: center;
+    margin-bottom: 6.7em;
+  }
+
+  p {
+    width: 99%;
+    text-align: left;
+    font-size: calc(14em / 16);
+    margin-top: calc(25em / 16);
+  }
+
+  h1 {
+    width: 100%;
+    font-size: calc(32em / 16);
+    text-align: left;
+  }
+
+  button {
+    margin: 0;
+    padding: calc(12em / 16) calc(48em / 16);
+  }
+}
+
+/* Media */
+
+div:last-of-type {
+  font-family: "Font Awesome 5 Brands";
+  display: flex;
+  justify-content: center;
+}
+
+div:last-of-type a:nth-child(1),
+div:last-of-type a:nth-child(2),
+div:last-of-type a:nth-child(3) {
+  color: transparent;
+  font-size: 0;
+  width: calc(43% / 3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div:last-of-type a:nth-child(1)::before,
+div:last-of-type a:nth-child(2)::before,
+div:last-of-type a:nth-child(3)::before {
+  color: white;
+  border: 0.5px solid white;
+  display: block;
+  font-size: calc(16rem / 16);
+  width: calc(16rem / 16);
+  height: calc(16rem / 16);
+  border-radius: 50%;
+  padding: calc(8rem / 16);
+  text-align: center;
+  transition: 0.3s;
+  transition-property: border-color, color;
+}
+
+div:last-of-type a:nth-child(1):hover::before,
+div:last-of-type a:nth-child(2):hover::before,
+div:last-of-type a:nth-child(3):hover::before {
+  color: hsl(300, 69%, 71%);
+  border-color: hsl(300, 69%, 71%);
+}
+
+div:last-of-type a:nth-child(1)::before {
+  content: "\f39e";
+}
+
+div:last-of-type a:nth-child(2)::before {
+  content: "\f099";
+}
+
+div:last-of-type a:nth-child(3)::before {
+  content: "\f16d";
+}
+
+/** Medium devices (tablets, 768px and up) **/
+@media (min-width: 768px) {
+  div:last-child {
+    width: 29%;
+    grid-area: media;
+    justify-self: flex-end;
+    justify-content: flex-end;
+  }
+}
